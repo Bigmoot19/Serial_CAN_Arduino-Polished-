@@ -35,17 +35,7 @@ class HardwareSerial;
 
 class Serial_CAN
 {
-private:
-    unsigned char cmdOk(char *cmd);
-    unsigned char enterSettingMode();
-    unsigned char exitSettingMode();
-    void clear();
-    void selfBaudRate(unsigned long baud);
-    char str_tmp[100];
-    SoftwareSerial *softwareSerial = NULL;
-    HardwareSerial *hardwareSerial = NULL;
-    Stream *canSerial = NULL;
-
+    
 public:
     
     void begin(int can_tx, int can_rx, unsigned long baud);
@@ -62,6 +52,18 @@ public:
     
     unsigned char factorySetting();
     void debugMode();
+    
+    
+private:
+    unsigned char cmdOk(char *cmd);
+    unsigned char enterSettingMode();
+    unsigned char exitSettingMode();
+    void clear();
+    void selfBaudRate(unsigned long baud);
+    char str_tmp[100];
+    SoftwareSerial *softwareSerial = NULL;
+    HardwareSerial *hardwareSerial = NULL;
+    Stream *canSerial = NULL;
 
 };
 #endif
