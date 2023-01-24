@@ -3,6 +3,8 @@
 [![Actions Status](https://github.com/arduino/arduino-cli-example/workflows/test/badge.svg)](https://github.com/arduino/arduino-cli-example/actions)
 [![Spell Check](https://github.com/arduino/compile-sketches/workflows/Spell%20Check/badge.svg)](https://github.com/arduino/compile-sketches/actions?workflow=Spell+Check)
 [![codecov](https://codecov.io/gh/arduino/compile-sketches/branch/main/graph/badge.svg?token=Uv6f1ebMZ4)](https://codecov.io/gh/arduino/compile-sketches)
+ 
+Thanks, Bigmoot19
 
 The Serial CAN Bus module provides your Arduino with CAN Bus capabilities and allows you to hack your vehicle. It lets you to read and write messages to the CAN Bus. The Serial CAN Bus module can be connected to your Arduino through the on-board Grove connector.
 
