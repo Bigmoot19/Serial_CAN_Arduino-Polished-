@@ -6,7 +6,7 @@
 
 void Serial_CAN::begin(int can_tx, int can_rx, unsigned long baud)
 {
-    softwareSerial = new SoftwareSerial(can_tx, can_rx);
+    softwareSerial = new SoftwareSerial(can_tx, can_rx); // SoftwareSerial object created and class called
     softwareSerial->begin(baud);
     canSerial = softwareSerial;
 }
@@ -53,16 +53,16 @@ unsigned char Serial_CAN::send(unsigned long id, uchar ext, uchar rtrBit, uchar 
 // 1: get data
 unsigned char Serial_CAN::recv(unsigned long *id, uchar *buf)
 {
-    if(canSerial->available())
+    if(canSerial->available()) // TRUE if anything in buffer
     {
-        unsigned long timer_s = millis();
+        unsigned long timer_s = millis(); //marking current time for later use
         
-        int len = 0;
+        int len = 0; 
         uchar dta[20];
         
-        while(1)
+        while(1) // Start of infine while loop
         {
-            while(canSerial->available())
+            while(canSerial->available())// TRUE if anything in buffer
             {
                 dta[len++] = canSerial->read();
                 if(len == 12)
@@ -100,7 +100,7 @@ unsigned char Serial_CAN::recv(unsigned long *id, uchar *buf)
                 return 0; // Reading 12 bytes should be faster than 10ms, abort if it takes longer, we loose the partial message in this case
             }
             
-        }
+        } // end of infinte while loop
     }
     
     return 0;
